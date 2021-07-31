@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "../../../styles/Home.module.css";
 function About({ abilities }) {
   return (
     <div>
@@ -6,13 +7,15 @@ function About({ abilities }) {
         {abilities &&
           abilities.map((ability, index) => (
             <Link
+              className={styles.grid}
               href={{
-                pathname: `/blogs/${ability.id}`
+                pathname: `/blogs/${ability.id}`,
               }}
+              style={{ cursor: "pointer" }}
               as={`/blogs/${ability.id}`}
               key={ability.id}
             >
-              <div>
+              <div className={styles.card} style={{cursor:'pointer'}}>
                 <li>
                   <h3>{ability.title}</h3>
                   <h4>{ability.detail}</h4>
