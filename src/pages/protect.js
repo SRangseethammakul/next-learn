@@ -6,9 +6,10 @@ const protect = () => {
   React.useEffect(() => {
     let isMounted = true;
     const getUser = async () => {
-      const response = await fetch(`http://localhost:3000/api/users/1`);
+      const response = await fetch(`http://localhost:3000/api/users/6`);
       if (!response.ok) {
-        router.push("/");
+        // router.push({pathname: '/', query:{search:'paramm'}}); //การใช้ push สามารถกด back ได้
+        router.replace('/');
       } else {
         const data = await response.json();
 

@@ -1,15 +1,19 @@
 import "../../styles/globals.css";
 import { ThemeProvider } from "styled-components";
+import LayoutPage from "../components/LayoutPage";
 const theme = {
-  color: {
+  colors: {
     primary: "red",
+    secondary : 'blue'
   },
 };
 function MyApp({ Component, pageProps }) {
-  return(
+  return (
     <ThemeProvider theme={theme}>
-    <Component {...pageProps} />
-  </ThemeProvider>
+      <LayoutPage>
+        <Component {...pageProps} />
+      </LayoutPage>
+    </ThemeProvider>
   );
 }
 

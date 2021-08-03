@@ -1,6 +1,9 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
 const dashboard = ({ me }) => {
+  React.useEffect(() => {
+    console.log('env', process.env.NEXT_PUBLIC_MY_PUBLIC_KEY);
+  }, []);
   return (
     <div>
       <h2>dashboard</h2>
@@ -13,6 +16,7 @@ export async function getServerSideProps(context) {
   const { req, res } = context;
   const response = await fetch(`http://localhost:3000/api/users/1`);
   console.log("server side render");
+  console.log('public key ==>', process.env.NEXT_PUBLIC_MY_PUBLIC_KEY);
   if (!response.ok) {
     res.writeHead(302, { Location: "/" });
     res.end();

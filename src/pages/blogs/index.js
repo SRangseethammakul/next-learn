@@ -1,16 +1,8 @@
 import Link from "next/link";
 import styles from "../../../styles/Home.module.css";
-import styled from "styled-components";
-const Div = styled.div`
-  width: 60%;
-  margin: 10;
-  p {
-    color: blue;
-  }
-`;
 function About({ abilities }) {
   return (
-    <Div>
+    <>
       <p>fefe</p>
       <ul>
         {abilities &&
@@ -33,7 +25,7 @@ function About({ abilities }) {
             </Link>
           ))}
       </ul>
-    </Div>
+    </>
   );
 }
 
